@@ -1,0 +1,10 @@
+import { ColorPalette, ColorItem, Meta } from '@storybook/addon-docs/blocks';
+import { colors } from './colors';
+
+<Meta title="DesignSystem/Colors" />
+
+<ColorPalette>
+  {Object.entries(colors).map(([title, colors]) => (
+    <ColorItem title={title} colors={{ hex: colors }} />
+  ))}
+</ColorPalette>
