@@ -1,0 +1,12 @@
+{
+  "name": "@saisaynoomleng_dev/email",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}
