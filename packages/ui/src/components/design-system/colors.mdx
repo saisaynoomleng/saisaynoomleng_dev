@@ -5,6 +5,8 @@ import { colors } from './colors';
 
 <ColorPalette>
   {Object.entries(colors).map(([title, colors]) => (
-    <ColorItem title={title} colors={{ hex: colors }} />
+    <ColorItem title={title} colors={colors} />
   ))}
+  <ColorItem title="Black" colors={{ hex: '#0d0d0d' }} />
+  <ColorItem title="White" colors={{ hex: '#d9d9d9' }} />
 </ColorPalette>

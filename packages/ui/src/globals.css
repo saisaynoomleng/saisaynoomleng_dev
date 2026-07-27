@@ -55,7 +55,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: var(--color-brand-primary);
+  --primary: var(--color-brand-primary-400);
   --primary-foreground: var(--color-brand-black);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -64,7 +64,7 @@
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
+  --border: var(--color-brand-primary-900);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -118,10 +118,52 @@
 
 @theme {
   /* colors */
-  --color-brand-primary: #00ff00;
-  --color-brand-accent: #51a2ff;
-  --color-brand-error: #fb2c36;
-  --color-brand-warning: #ff7c1c;
+  --color-brand-primary-50: #e6ffe4;
+  --color-brand-primary-100: #c7ffc4;
+  --color-brand-primary-200: #93ff90;
+  --color-brand-primary-300: #52ff50;
+  --color-brand-primary-400: #00ff00;
+  --color-brand-primary-500: #00e604;
+  --color-brand-primary-600: #00b806;
+  --color-brand-primary-700: #008b07;
+  --color-brand-primary-800: #076d0d;
+  --color-brand-primary-900: #0b5c12;
+  --color-brand-primary-950: #003406;
+
+  --color-brand-accent-50: #eef6ff;
+  --color-brand-accent-100: #daebff;
+  --color-brand-accent-200: #bddbff;
+  --color-brand-accent-300: #90c6ff;
+  --color-brand-accent-400: #51a2ff;
+  --color-brand-accent-500: #3584fc;
+  --color-brand-accent-600: #1f64f1;
+  --color-brand-accent-700: #174fde;
+  --color-brand-accent-800: #1940b4;
+  --color-brand-accent-900: #1a3a8e;
+  --color-brand-accent-950: #152556;
+
+  --color-brand-error-50: #fff1f2;
+  --color-brand-error-100: #ffe0e1;
+  --color-brand-error-200: #ffc6c9;
+  --color-brand-error-300: #ff9fa4;
+  --color-brand-error-400: #fb2c36;
+  --color-brand-error-500: #e91923;
+  --color-brand-error-600: #c4111a;
+  --color-brand-error-700: #a21219;
+  --color-brand-error-800: #86161b;
+  --color-brand-error-900: #490609;
+
+  --color-ecstasy-50: #fff7ed;
+  --color-ecstasy-100: #ffedd4;
+  --color-ecstasy-200: #ffd8a8;
+  --color-ecstasy-300: #ffbb70;
+  --color-ecstasy-400: #ff7c1c;
+  --color-ecstasy-500: #f05906;
+  --color-ecstasy-600: #c74107;
+  --color-ecstasy-700: #9e340e;
+  --color-ecstasy-800: #7f2d0f;
+  --color-ecstasy-900: #451405;
+
   --color-brand-black: #0d0d0d;
   --color-brand-white: #d9d9d9;
 
