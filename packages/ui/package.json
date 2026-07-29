@@ -36,6 +36,7 @@
     "./styles": "./src/globals.css"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.5.7",
     "@portabletext/editor": "^7.10.13",
     "@portabletext/keyboard-shortcuts": "^2.1.3",
     "@portabletext/react": "^7.0.1",
@@ -50,6 +51,7 @@
     "lucide-react": "^1.26.0",
     "next-themes": "^0.4.6",
     "react-day-picker": "^10.0.1",
+    "react-hook-form": "^7.83.0",
     "recharts": "3.8.0",
     "shadcn": "^4.14.1",
     "sonner": "^2.0.7",
