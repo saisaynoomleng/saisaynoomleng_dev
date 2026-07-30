@@ -15,7 +15,7 @@ export const schemaDefinition = defineSchema({
     { name: 'h4' },
     { name: 'blockquote' },
   ],
-  annotations: [{ name: 'link' }],
+  annotations: [{ name: 'link', fields: [{ name: 'href', type: 'string' }] }],
   lists: [{ name: 'bullet' }, { name: 'number' }],
   blockObjects: [{ name: 'image' }, { name: 'code' }],
 });
