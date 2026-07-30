@@ -57,6 +57,7 @@ export const InputImage = ({
       isCentered={false}
       padding="none"
       className={twMerge(clsx('', className))}
+      size="full"
     >
       <Field>
         <FieldLabel htmlFor="imageAssetId">Upload an Image</FieldLabel>

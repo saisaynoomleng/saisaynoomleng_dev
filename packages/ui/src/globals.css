@@ -206,4 +206,14 @@
   body {
     @apply bg-background text-foreground font-main;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-balance leading-none;
+  }
+  p {
+    @apply text-pretty;
+  }
 }
