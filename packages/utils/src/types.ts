@@ -2,7 +2,7 @@
  * API Response Data Shape
  */
 export type ActionRespone<T> = {
-  success: false;
+  success: boolean;
   message: string;
   field?: keyof T;
 };
