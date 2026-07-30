@@ -31,6 +31,8 @@ export const auth = betterAuth({
     resetPasswordTokenExpiresIn: 3600,
   },
 
+  emailVerification: {},
+
   advanced: {
     useSecureCookies: false,
     database: {
