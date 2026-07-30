@@ -1,5 +1,5 @@
 {
-  "name": "saisaynoomlengdev",
+  "name": "@saisaynoomleng_dev/studio",
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
@@ -15,10 +15,12 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/vision": "^6.7.0",
+    "@saisaynoomleng_dev/utils": "workspace:*",
+    "@sanity/vision": "^6.8.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "sanity": "^6.7.0",
+    "react-icons": "^5.7.0",
+    "sanity": "^6.8.0",
     "sanity-plugin-media": "^6.0.9",
     "styled-components": "^6.1.18"
   },

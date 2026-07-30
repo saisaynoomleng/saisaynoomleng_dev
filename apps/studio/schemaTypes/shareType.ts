@@ -60,3 +60,81 @@ export const blockContent = defineType({
     }),
   ],
 })
+
+export const seo = defineType({
+  name: 'seo',
+  type: 'object',
+  fields: [
+    defineField({
+      name: 'metaTitle',
+      title: 'Meta Title',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'metaDesc',
+      title: 'Meta Description',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'ogImage',
+      type: 'imageWithAlt',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'noIndex',
+      type: 'boolean',
+      initialValue: false,
+    }),
+  ],
+})
+
+export const pageLink = defineType({
+  name: 'pageLink',
+  type: 'object',
+  fields: [
+    defineField({
+      name: 'label',
+      title: 'Link Label',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'href',
+      title: 'path to the page',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'isInternal',
+      type: 'boolean',
+      initialValue: true,
+      validation: (rule) => rule.required(),
+    }),
+  ],
+})
+
+export const socialLink = defineType({
+  name: 'socialLink',
+  type: 'object',
+  fields: [
+    defineField({
+      name: 'platform',
+      type: 'string',
+      options: {
+        list: [
+          {value: 'gitHub', title: 'GitHub'},
+          {value: 'linkedIn', title: 'LinkedIn'},
+          {value: 'leetCode', title: 'LeetCode'},
+        ],
+        layout: 'radio',
+      },
+    }),
+    defineField({
+      name: 'url',
+      title: 'URL to the platform',
+      type: 'url',
+    }),
+  ],
+})
