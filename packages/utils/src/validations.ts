@@ -81,6 +81,7 @@ export const ProjectSchema = z.object({
   name: z.string().min(1, 'Project name must have at least 1 character'),
   slug: z.string().min(1, 'Slug must have at least 1 character'),
   body: z.array(z.any()).min(1, 'Project content is required'),
+  category: z.string().min(1, 'Select a category'),
   startedDate: z.string().min(1, 'Project started date is required'),
   endedDate: z.string().min(1, 'Project ended date is required'),
   stacks: z
@@ -147,7 +148,10 @@ export const CertificateSchema = z.object({
   imageAlt: z
     .string()
     .min(1, 'Image alternative is required for screen reader'),
-  topic: z.array(z.string()).min(1, 'At least 1 topic is required'),
+  topics: z.array(z.string()).min(1, 'At least 1 topic is required'),
+  isFeatured: z.boolean().default(false),
+  receivedDate: z.string().min(1, 'Recevied Date is required'),
+  platform: z.string().min(1, 'Select a platform'),
 });
 /**
  * Validate Certificate Input Schema
@@ -175,3 +179,23 @@ export type ContactInputSchema = z.input<typeof ContactSchema>;
  * Validate Contact Output Schema
  */
 export type ContactOutputSchema = z.output<typeof ContactSchema>;
+
+/**
+ * Validate Platform Schema
+ */
+export const PlatformSchema = z.object({
+  name: z.string().min(1, 'Platform Name must have at least 1 character'),
+  slug: z.string().min(1, 'Slug must have at least 1 character'),
+  imageAssetId: z.string().min(1, 'Upload an image'),
+  imageAlt: z
+    .string()
+    .min(1, 'Image alternative text is required for the screen reader'),
+});
+/**
+ * Validate Platform Input Schema
+ */
+export type PlatformInputSchema = z.input<typeof PlatformSchema>;
+/**
+ * Validate Platform Output Schema
+ */
+export type PlatformOutputSchema = z.output<typeof PlatformSchema>;
