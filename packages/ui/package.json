@@ -2,7 +2,7 @@
   "name": "@saisaynoomleng_dev/ui",
   "version": "1.0.0",
   "type": "module",
-  "private": "true",
+  "private": true,
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.1",
     "@storybook/addon-a11y": "^10.5.4",
