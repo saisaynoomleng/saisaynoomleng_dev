@@ -43,5 +43,5 @@ export const EditSkillForm = ({
     return toast.success(result.message);
   };
 
-  return <SkillForm form={form} onSubmit={onSubmit} />;
+  return <SkillForm form={form} onSubmit={onSubmit} title="Edit Skill Form" />;
 };

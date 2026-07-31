@@ -4,7 +4,12 @@ import React from 'react';
 import { Bounded } from '../../shared';
 import { SubmitHandler, UseFormReturn } from 'react-hook-form';
 import { sanitySlugifier, SkillInputSchema } from '@saisaynoomleng_dev/utils';
-import { Field, FieldError, FieldLabel } from '#components/ui/field';
+import {
+  Field,
+  FieldError,
+  FieldLabel,
+  FieldTitle,
+} from '#components/ui/field';
 import { Input } from '#components/ui/input';
 import { Button } from '#components/ui/button';
 import { twMerge } from 'tailwind-merge';
@@ -13,11 +18,13 @@ import clsx from 'clsx';
 type SkillFormProps = {
   form: UseFormReturn<SkillInputSchema>;
   onSubmit: SubmitHandler<SkillInputSchema>;
+  title: string;
 };
 
 export const SkillForm = ({
   form,
   onSubmit,
+  title,
 }: SkillFormProps): React.JSX.Element => {
   const { register, setError } = form;
   const { errors } = form.formState;
@@ -54,6 +61,7 @@ export const SkillForm = ({
       onSubmit={form.handleSubmit(onSubmit)}
       className={twMerge(clsx('flex flex-col gap-y-4'))}
     >
+      <FieldTitle>{title}</FieldTitle>
       <Field>
         <FieldLabel htmlFor="name">Name</FieldLabel>
         <Input type="text" id="name" {...register('name')} />

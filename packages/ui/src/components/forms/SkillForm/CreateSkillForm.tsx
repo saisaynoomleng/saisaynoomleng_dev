@@ -41,5 +41,7 @@ export const CreateSkillForm = ({
     return toast.success(result.message);
   };
 
-  return <SkillForm form={form} onSubmit={onSubmit} />;
+  return (
+    <SkillForm form={form} onSubmit={onSubmit} title="Create Skill Form" />
+  );
 };

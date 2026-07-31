@@ -65,7 +65,7 @@ export const FilledForm: Story = {
     await expect(mockAction).toHaveBeenCalledWith({
       name: 'TypeScript & Zod',
       slug: 'typescript-zod',
-      level: 99,
+      level: 89,
     });
   },
 };
