@@ -7,7 +7,11 @@ import {
 } from '@saisaynoomleng_dev/ui';
 import React from 'react';
 
-export const About = async (): Promise<React.JSX.Element> => {
+export const About = async ({
+  id,
+}: {
+  id: string;
+}): Promise<React.JSX.Element> => {
   const { data: about } = await sanityFetch({ query: ABOUT_QUERY });
 
   if (!about) return <></>;
@@ -15,7 +19,7 @@ export const About = async (): Promise<React.JSX.Element> => {
   const { city, state, body, interests } = about;
 
   return (
-    <Bounded size="full" padding="none" isCentered={false}>
+    <Bounded size="full" padding="none" isCentered={false} id={id}>
       <TerminalWindow title="about.txt" prompt="cat about.txt">
         <Bounded
           as="div"
