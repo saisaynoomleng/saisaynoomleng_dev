@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react-vite';
 import '../src/globals.css';
-import { Toaster } from '../src/components/ui';
+import { Toaster, TooltipProvider } from '../src/components/ui';
 
 const preview: Preview = {
   parameters: {
@@ -22,8 +22,10 @@ const preview: Preview = {
     (Story) => {
       return (
         <>
-          <Story />
-          <Toaster richColors closeButton position="bottom-center" />
+          <TooltipProvider>
+            <Story />
+            <Toaster richColors closeButton position="bottom-center" />
+          </TooltipProvider>
         </>
       );
     },

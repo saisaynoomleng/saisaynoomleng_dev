@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Bounded } from '../Bounded';
 import { schemaDefinition } from './TextEditor.schema';
 
@@ -16,11 +16,16 @@ import {
 } from '@portabletext/editor';
 import { EventListenerPlugin } from '@portabletext/editor/plugins';
 import { TextEditorToolbar } from './TextEditorToolbar';
-import { TextEditorPreview } from './TextEditorPreview';
 
-export const TextEditor = (): React.JSX.Element => {
-  const [value, setValue] = useState<PortableTextBlock[]>();
+type TextEditorProps = {
+  value?: PortableTextBlock[];
+  onChange: (value: PortableTextBlock[]) => void;
+};
 
+export const TextEditor = ({
+  value,
+  onChange,
+}: TextEditorProps): React.JSX.Element => {
   return (
     <Bounded padding="none" size="full" isCentered={false}>
       <EditorProvider
@@ -32,7 +37,7 @@ export const TextEditor = (): React.JSX.Element => {
         <EventListenerPlugin
           on={(event) => {
             if (event.type === 'mutation') {
-              setValue(event.value);
+              onChange(event.value as PortableTextBlock[]);
             }
           }}
         />
@@ -40,15 +45,13 @@ export const TextEditor = (): React.JSX.Element => {
         <TextEditorToolbar />
 
         <PortableTextEditable
-          className="border border-input min-h-100 indent-2 py-2"
+          className="border border-input h-100 p-2 indent-2 max-h-100 overflow-y-auto"
           renderStyle={renderStyle}
           renderDecorator={renderDecorator}
           renderAnnotation={renderAnnotation}
           renderBlock={renderBlock}
           renderListItem={renderListItem}
         />
-
-        <TextEditorPreview value={value as PortableTextBlock[]} />
       </EditorProvider>
     </Bounded>
   );
@@ -56,15 +59,15 @@ export const TextEditor = (): React.JSX.Element => {
 
 const renderStyle: RenderStyleFunction = ({ schemaType, children }) => {
   if (schemaType.name === 'h1') {
-    return <h1 className="text-fs-800">{children}</h1>;
+    return <h1 className="text-fs-500">{children}</h1>;
   }
 
   if (schemaType.name === 'h2') {
-    return <h2 className="text-fs-700">{children}</h2>;
+    return <h2 className="text-fs-500">{children}</h2>;
   }
 
   if (schemaType.name === 'h3') {
-    return <h3 className="text-fs-600">{children}</h3>;
+    return <h3 className="text-fs-500">{children}</h3>;
   }
 
   if (schemaType.name === 'h4') {
@@ -114,7 +117,11 @@ const renderAnnotation: RenderAnnotationFunction = (props) => {
 
 const isImage = (
   props: PortableTextBlock,
-): props is PortableTextBlock & { src: string } => {
+): props is PortableTextBlock & {
+  src: string;
+  alt?: string;
+  caption?: string;
+} => {
   return 'src' in props;
 };
 
@@ -127,7 +134,14 @@ const isCode = (
 const renderBlock: RenderBlockFunction = (props) => {
   if (props.schemaType.name === 'image' && isImage(props.value)) {
     return (
-      <div className="border border-input p-4">IMG: {props.value.src}</div>
+      <div className="border border-input p-4">
+        <img
+          src={props.value.src}
+          alt={props.value?.alt || ''}
+          style={{ maxWidth: '100%' }}
+        />
+        {props.value.caption && <p>{props.value.caption}</p>}
+      </div>
     );
   }
 
