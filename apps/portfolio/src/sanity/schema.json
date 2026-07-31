@@ -493,6 +493,20 @@
         },
         "optional": true
       },
+      "employerName": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
+      "position": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "startedDate": {
         "type": "objectAttribute",
         "value": {
