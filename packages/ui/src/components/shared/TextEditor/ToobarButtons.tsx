@@ -222,13 +222,22 @@ export const BlockObjectButton = (props: {
           )}
 
           <DialogFooter>
-            <DialogClose>
+            <DialogClose asChild>
               <Button
                 type="button"
                 onClick={() => {
+                  if (!imageUrl) return;
+
                   button.send({
                     type: 'insert',
-                    value: { _type: 'image', src: imageUrl, alt: '' },
+                    value: {
+                      _type: 'image',
+                      alt: '',
+                      asset: {
+                        _ref: imageUrl,
+                        _type: 'reference',
+                      },
+                    },
                     placement: 'auto',
                   });
                 }}

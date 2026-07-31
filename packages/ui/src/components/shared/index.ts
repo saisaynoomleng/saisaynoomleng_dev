@@ -3,3 +3,4 @@ export * from './SectionTitle';
 export * from './TextareaWithCounts';
 export * from './InputImage';
 export * from './TextEditor';
+export * from './TerminalWindows';

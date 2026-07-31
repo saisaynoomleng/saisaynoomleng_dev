@@ -76,8 +76,8 @@ const components: PortableTextComponents = {
     image: ({ value }) => (
       <div className="w-150 h-100 aspect-video overflow-hidden relative">
         <img
-          src={value.imageUrl}
-          alt={value.imageAlt}
+          src={value.src}
+          alt={value.alt ?? ''}
           className="w-full object-cover"
         />
       </div>

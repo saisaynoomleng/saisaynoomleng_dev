@@ -120,7 +120,6 @@ const isImage = (
 ): props is PortableTextBlock & {
   src: string;
   alt?: string;
-  caption?: string;
 } => {
   return 'src' in props;
 };
@@ -134,14 +133,11 @@ const isCode = (
 const renderBlock: RenderBlockFunction = (props) => {
   if (props.schemaType.name === 'image' && isImage(props.value)) {
     return (
-      <div className="border border-input p-4">
-        <img
-          src={props.value.src}
-          alt={props.value?.alt || ''}
-          style={{ maxWidth: '100%' }}
-        />
-        {props.value.caption && <p>{props.value.caption}</p>}
-      </div>
+      <img
+        src={props.value.src}
+        alt={props.value?.alt ?? ''}
+        className="w-full h-full"
+      />
     );
   }
 
