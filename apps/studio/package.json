@@ -9,7 +9,9 @@
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy",
     "dev": "sanity dev",
-    "start": "sanity start"
+    "start": "sanity start",
+    "portfolio:schema": "sanity schema extract --path=../portfolio/src/sanity/schema.json",
+    "portfolio:typegen": "sanity typegen generate"
   },
   "keywords": [
     "sanity"

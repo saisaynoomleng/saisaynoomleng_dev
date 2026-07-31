@@ -13,7 +13,7 @@ export const TerminalWindow = ({
   children,
 }: TerminalWindowProps): React.JSX.Element => {
   return (
-    <Bounded size="full">
+    <Bounded size="full" padding="none" isCentered={false}>
       <div className="border border-primary/40">
         <div className="flex items-center px-4 py-2 ">
           <div className="flex space-x-2">
@@ -29,7 +29,7 @@ export const TerminalWindow = ({
 
       <div className="flex flex-col gap-y-3 border-primary/40 border-l border-r border-b p-4">
         <p>
-          <span className="text-primary">saisaynoomleng_dev</span>
+          <span className="text-primary">saisaynoomleng_dev@portfolio</span>
           <span>:</span>
           <span className="text-brand-accent-500">~</span>
           <span>$</span>

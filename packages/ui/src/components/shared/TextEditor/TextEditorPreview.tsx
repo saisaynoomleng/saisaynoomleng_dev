@@ -2,7 +2,6 @@ import { PortableTextBlock } from '@portabletext/editor';
 import { PortableText, PortableTextComponents } from '@portabletext/react';
 import React from 'react';
 import { Bounded } from '../Bounded';
-import { Separator } from '#components/ui/separator';
 
 export const TextEditorPreview = ({
   value,
@@ -10,10 +9,12 @@ export const TextEditorPreview = ({
   value: PortableTextBlock[];
 }): React.JSX.Element => {
   return (
-    <Bounded className="text-foreground">
-      <p>Preview</p>
-      <Separator />
-
+    <Bounded
+      className="text-foreground"
+      size="full"
+      isCentered={false}
+      padding="none"
+    >
       <div className="prose text-foreground">
         <PortableText value={value} components={components} />
       </div>
