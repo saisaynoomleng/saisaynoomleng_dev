@@ -23,6 +23,16 @@ export const historyType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'employerName',
+      title: 'Employer Name',
+      type: 'string',
+    }),
+    defineField({
+      name: 'position',
+      title: 'Position',
+      type: 'string',
+    }),
+    defineField({
       name: 'startedDate',
       title: 'Started Date',
       type: 'date',

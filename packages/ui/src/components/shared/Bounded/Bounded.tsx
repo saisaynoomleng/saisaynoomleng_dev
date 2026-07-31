@@ -34,8 +34,8 @@ const paddingVariants: Record<Padding, string> = {
 const spacingVariants: Record<Spacing, string> = {
   none: '',
   sm: 'space-y-6',
-  md: 'space-y-8',
-  lg: 'space-y-10',
+  md: 'space-y-12',
+  lg: 'space-y-22',
 };
 
 export const Bounded = <T extends React.ElementType>({
