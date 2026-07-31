@@ -19,8 +19,8 @@ type BoundedProps<T extends React.ElementType> = {
 } & Omit<ComponentPropsWithoutRef<T>, 'as' | 'className'>;
 
 const sizeVariants: Record<Size, string> = {
-  sm: 'max-w-2xl',
-  md: 'max-w-4xl',
+  sm: 'max-w-4xl',
+  md: 'max-w-7xl',
   full: 'max-w-none',
 };
 
