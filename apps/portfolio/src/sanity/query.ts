@@ -27,5 +27,6 @@ export const EMPLOYMENTS_QUERY = defineQuery(`*[_type == 'history'
   position,
   startedDate,
   endedDate,
-  body
+  body,
+  employerName
  }`);

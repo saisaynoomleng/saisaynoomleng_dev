@@ -431,7 +431,7 @@ export type SKILLS_QUERY_RESULT = Array<{
 
 // Source: src/sanity/query.ts
 // Variable: EMPLOYMENTS_QUERY
-// Query: *[_type == 'history' && defined(slug.current)]  |order(_updatedAt desc){  _id,  name,  position,  startedDate,  endedDate,  body }
+// Query: *[_type == 'history' && defined(slug.current)]  |order(_updatedAt desc){  _id,  name,  position,  startedDate,  endedDate,  body,  employerName }
 export type EMPLOYMENTS_QUERY_RESULT = Array<{
   _id: string;
   name: string | null;
@@ -439,6 +439,7 @@ export type EMPLOYMENTS_QUERY_RESULT = Array<{
   startedDate: string | null;
   endedDate: string | null;
   body: BlockContent | null;
+  employerName: string | null;
 }>;
 
 // Query TypeMap
@@ -447,6 +448,6 @@ declare module '@sanity/client' {
   interface SanityQueries {
     '*[_type == \'about\'\n && defined(slug.current)][0]{\n  "slug": slug.current,\n  body,\n  "city": contactInfo.city,\n  "state": contactInfo.state,\n  "gitHubUrl": contactInfo.gitHubUrl,\n  "leetCodeUrl": contactInfo.leetCodeUrl,\n  "linkedInUrl": contactInfo.linkedInURL,\n  interests[]\n }': ABOUT_QUERY_RESULT;
     "*[_type == 'skill'\n && defined(slug.current)]{\n  _id,\n  name,\n  level\n }": SKILLS_QUERY_RESULT;
-    "*[_type == 'history'\n && defined(slug.current)]\n  |order(_updatedAt desc){\n  _id,\n  name,\n  position,\n  startedDate,\n  endedDate,\n  body\n }": EMPLOYMENTS_QUERY_RESULT;
+    "*[_type == 'history'\n && defined(slug.current)]\n  |order(_updatedAt desc){\n  _id,\n  name,\n  position,\n  startedDate,\n  endedDate,\n  body,\n  employerName\n }": EMPLOYMENTS_QUERY_RESULT;
   }
 }

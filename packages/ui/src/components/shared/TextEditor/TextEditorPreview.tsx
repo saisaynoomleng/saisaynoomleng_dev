@@ -66,13 +66,17 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="list-disc marker:text-brand-primary-400">{children}</ul>
+      <ul className="list-none marker:text-brand-primary-400">{children}</ul>
     ),
     number: ({ children }) => (
       <ol className="list-decimal marker:text-brand-primary-400">{children}</ol>
     ),
   },
-  listItem: ({ children }) => <li>{children}</li>,
+  listItem: ({ children }) => (
+    <li className="before:mr-2 before:content-['>'] before:text-brand-primary-400!">
+      {children}
+    </li>
+  ),
   types: {
     image: ({ value }) => (
       <div className="w-150 h-100 aspect-video overflow-hidden relative">
